@@ -27,9 +27,10 @@ const putEncuesta = async(req, res)=>{
     })
 }
 
-const patchEncuesta = async(req,res)=>{
-    const{nombreEncuesta, nombreEncuestado} =req.query
-    const encuesta1 = await Encuesta.findOneAndUpdate({nombreEncuesta:nombreEncuesta},{nombreEncuestado:nombreEncuestado})
+const patchEncuesta = async (req,res)=>{
+    const{nombreEncuesta, nombreEncuestado} =req.body
+    const encuesta1 = await Encuesta.findOneAndUpdate({nombreEncuesta:nombreEncuesta},
+        {nombreEncuestado:nombreEncuestado})
     res.json({
         msg:'ENCUESTA PATCH API',
         encuesta1
