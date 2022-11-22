@@ -34,6 +34,8 @@ class Server {
     listen(){
         this.app.listen(this.port,(req,res)=>{
             console.log(`Escuchando por el puerto ${this.port}`)
+            console.log("------- Testeador -------")
+            console.log(` localhost:${this.port}/api/encuestas   `)
         })
     }
 }

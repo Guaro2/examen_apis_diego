@@ -36,9 +36,9 @@ const patchEncuesta = async(req,res)=>{
     })
 }
 
-const deleteEncuesta = async () =>{
+const deleteEncuesta = async (req, res) =>{
     const{nombreEncuesta}=req.query
-    const encuesta1 = await Encuesta.findOneAndUpdate({nombreEncuesta:nombreEncuesta});
+    const encuesta1 = await Encuesta.findOneAndDelete({nombreEncuesta:nombreEncuesta});
     res.json({
         msg:'ENCUESTA DELETE API',
         encuesta1
